@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "median-filter"
+name = "convolution-filter"
 version = "1.0.0"
-description = "Equaliza o histograma de uma determinada imagem de entrada."
+description = "Implementa vários filtros que utilizam convolução."
 authors = ["Olavo Nascimento <olavo.nascimento4@gmail.com>"]
 license = "MIT"
 

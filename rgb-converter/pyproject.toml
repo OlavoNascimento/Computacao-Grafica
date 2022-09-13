@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "conversor-rgb"
+name = "rgb-converter"
 version = "1.0.0"
 description = "Converte imagens RGB para HSL e CMYK."
 authors = ["Olavo Nascimento <olavo.nascimento4@gmail.com>"]

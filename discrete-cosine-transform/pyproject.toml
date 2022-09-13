@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "image-equalize"
+name = "discrete-cosine-transform"
 version = "1.0.0"
-description = "Equaliza o histograma de uma determinada imagem de entrada."
+description = "Implementa a transformada discreta do cosseno, a transformada inversa discreta do cosseno e os filtro de passa alta e passa baixa"
 authors = ["Olavo Nascimento <olavo.nascimento4@gmail.com>"]
 license = "MIT"
 
@@ -9,8 +9,6 @@ license = "MIT"
 python = "^3.10"
 numpy = "^1.23.2"
 opencv-python = "^4.6.0"
-Pillow = "^9.2.0"
-matplotlib = "^3.5.3"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^22.6.0", allow-prereleases = true}
@@ -19,3 +17,4 @@ pylint = "^2.14.5"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+

@@ -104,13 +104,16 @@ def main():
     }
     sobel_results = []
     for filter_name, weight in weights.items():
-        conv_filter = ConvolutionFilter(input_file)
         weighted_image = conv_filter.apply(np.array(weight, dtype=np.float64))
         output_path = conv_filter.save(weighted_image, filter_name)
-        print(f"Aplicando filtro sobel em {input_file} e salvando resultado em {output_path}")
+        print(
+            f"Aplicando filtro sobel em {input_file} e salvando resultado em {output_path}"
+        )
         sobel_results.append(weighted_image)
     output_path = conv_filter.save(sobel_results[0] + sobel_results[1], "sobel soma")
-    print(f"Aplicando filtro sobel soma em {input_file} e salvando resultado em {output_path}")
+    print(
+        f"Aplicando filtro sobel soma em {input_file} e salvando resultado em {output_path}"
+    )
 
 
 if __name__ == "__main__":
