@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-from math import floor
 from pathlib import Path
 
 import cv2
@@ -11,8 +10,8 @@ import numpy as np
 class BasicImageOperation:
     def __init__(self, image_path):
         self.image_path = image_path
-        self.image = cv2.imread(str(image_path))
-        self.width, self.height, _ = self.image.shape
+        self.image = cv2.cvtColor(cv2.imread(str(image_path)), cv2.COLOR_BGR2GRAY)
+        self.width, self.height = self.image.shape
 
     def save(self, image):
         filename, extension = self.image_path.name.split(".")
@@ -55,6 +54,7 @@ class SimpleSegmentation(BasicImageOperation):
         threshold = self.initial_threshold
         print(f"Initial threshold: {threshold}")
 
+        _, segmented_image = cv2.threshold(self.image, threshold, 255, cv2.THRESH_BINARY)
         iteration = 0
         while (
             previous_threshold is None or abs(threshold - previous_threshold) >= self.delta_limit
@@ -138,6 +138,10 @@ def main():
     simple_seg = SimpleSegmentation(input_file, 127, 10)
     segmented_image = simple_seg.apply()
     simple_seg.save(segmented_image)
+
+    otsu_seg = OtsuSegmentation(input_file)
+    segmented_image = otsu_seg.apply()
+    otsu_seg.save(segmented_image)
 
 
 if __name__ == "__main__":
