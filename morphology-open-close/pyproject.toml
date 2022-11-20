@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "morphology-open-close"
+version = "1.0.0"
+description = "Implementa as funções morfológicas de abertura e fechamento, assim como outros filtros que utilizam essas operações."
+authors = ["Olavo Nascimento <olavo.nascimento4@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.23.2"
+opencv-python = "^4.6.0"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^22.6.0", allow-prereleases = true}
+pylint = "^2.14.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
