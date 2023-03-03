@@ -57,6 +57,7 @@ class BaseImageOperation:
         pixel_value = self.pixel_starting_value
         for i in range(sub_matrix_up, sub_matrix_down + 1):
             for j in range(sub_matrix_left, sub_matrix_right + 1):
+                # TODO Verificar se o elemento estruturante é ativado na posição atual.
                 pixel_value = self.get_next_pixel_value(self.image[i][j], pixel_value)
         return pixel_value
 

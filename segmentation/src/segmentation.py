@@ -78,7 +78,6 @@ class SimpleSegmentation(BasicImageOperation):
 
             previous_threshold = threshold
             threshold = (group1 + group2) / 2
-            print(abs(threshold - previous_threshold))
             print(f"Simple: Iteration {iteration} has threshold {threshold}")
             _, segmented_image = cv2.threshold(self.image, threshold, 255, cv2.THRESH_BINARY)
 
@@ -117,7 +116,7 @@ class OtsuSegmentation(BasicImageOperation):
                 (average_group2 - image_average) ** 2
             )
             if new_variance > variance:
-                print(f"OTSU: Treshold {threshold} has larger variance than previous threshold")
+                print(f"OTSU: Threshold {threshold} has larger variance than previous threshold")
                 variance = new_variance
                 threshold = i
 
